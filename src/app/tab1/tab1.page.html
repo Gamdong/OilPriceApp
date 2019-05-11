@@ -1,41 +1,79 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color='warning'>
     <ion-title>
-      Tab One
+      주유소 리스트
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <!-- 위치 -->
+  <ion-item color="light">
+    <ion-label>
+      현재 위치 : 전라북도 > 군산시
+    </ion-label>
+  </ion-item>
+
+  <!-- 검색 -->
+  <ion-item>
+    <ion-col col="4">
+      <ion-select value="gasoline" okText="확인" cancelText="취소">
+        <ion-select-option value="gasoline">휘발유</ion-select-option>
+        <ion-select-option value="diesel">경유</ion-select-option>
+        <ion-select-option value="kerosene">등유</ion-select-option>
+        <ion-select-option value="lpg">LPG</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col="4">
+      <ion-select value="1km" okText="확인" cancelText="취소">
+        <ion-select-option value="1km">1Km</ion-select-option>
+        <ion-select-option value="5km">5Km</ion-select-option>
+        <ion-select-option value="10km">10Km</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col="4">
+      <ion-select value="distance" okText="확인" cancelText="취소">
+        <ion-select-option value="low-price">가격순</ion-select-option>
+        <ion-select-option value="name">이름순</ion-select-option>
+        <ion-select-option value="distance">거리순</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-item>
+
+  <!-- 주유소 목록 -->
+  <ion-list>
+    <ion-list-header mode="ios" style="background:white;">
+      <ion-label>검색결과: 3</ion-label>
+    </ion-list-header>
+
+    <!-- qry : getGasStations -->
+    <ion-item>
+      <!-- 주유소 브랜드 -->
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+
+      <!-- 주유소 명 -->
+      <ion-label>
+        <h2>해와달 주유소</h2>
+        <p></p>
+      </ion-label>
+
+      <!-- 가격 / 거리 -->
+      <ion-text class="text-right">
+        <ion-label>
+          <h2 class="text-right" style="color:red;">1,400</h2>
+          <p>약 2.5km</p>
+        </ion-label>
+      </ion-text>
+
+      <!-- 상세보기 버튼 -->
+      <ion-buttons slot="end">
+        <ion-tab-button (click)="console.log('HI')">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <ion-label>자세히</ion-label>
+        </ion-tab-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 </ion-content>

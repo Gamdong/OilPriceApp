@@ -1,6 +1,8 @@
 {
   "name": "oilPriceApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "fb3ac4c8"
 }
