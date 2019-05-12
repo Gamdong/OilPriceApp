@@ -8,14 +8,18 @@ import { Restangular } from 'ngx-restangular';
 })
 export class Tab1Page {
 
+  gasStations: any = [];
+
   constructor(private rest: Restangular) {
 
   }
 
   getGasStations() {
     console.log("get gas-station list");
-    this.rest.all('areaCode.do?code=F530190510&out=json&area=06').getList().subscribe((results) => {
+    this.gasStations = [];
 
+    this.rest.all('/gasstation/getgasstations').getList().subscribe((results) => {
+      this.gasStations = results;
     });
   }
 

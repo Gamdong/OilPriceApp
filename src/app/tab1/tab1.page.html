@@ -43,11 +43,11 @@
   <!-- 주유소 목록 -->
   <ion-list>
     <ion-list-header mode="ios" style="background:white;">
-      <ion-label>검색결과: 3</ion-label>
+      <ion-label>검색결과: {{gasStations.length}}</ion-label>
     </ion-list-header>
 
     <!-- qry : getGasStations -->
-    <ion-item>
+    <ion-item *ngFor="let gs of gasStations">
       <!-- 주유소 브랜드 -->
       <ion-avatar slot="start">
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
@@ -55,15 +55,15 @@
 
       <!-- 주유소 명 -->
       <ion-label>
-        <h2>해와달 주유소</h2>
+        <h2>{{gs.gasStationName}}</h2>
         <p></p>
       </ion-label>
 
       <!-- 가격 / 거리 -->
       <ion-text class="text-right">
         <ion-label>
-          <h2 class="text-right" style="color:red;">1,400</h2>
-          <p>약 2.5km</p>
+          <h2 class="text-right" style="color:red;">{{gs.price}}</h2>
+          <p>약 {{ (gs.distance / 1000).toFixed(1) }}km</p>
         </ion-label>
       </ion-text>
 

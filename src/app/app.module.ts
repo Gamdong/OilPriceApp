@@ -11,12 +11,6 @@ import { AppComponent } from './app.component';
 
 import { RestangularModule, Restangular } from 'ngx-restangular';
 
-// Function for setting the default restangular configuration
-export function RestangularConfigFactory(RestangularProvider) {
-  RestangularProvider.setBaseUrl('http://www.opinet.co.kr/api/');
-  RestangularProvider.setDefaultHeaders({ 'code': 'F530190510' });
-}
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -29,3 +23,9 @@ export function RestangularConfigFactory(RestangularProvider) {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// Function for setting the default restangular configuration
+export function RestangularConfigFactory(RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://localhost:5000/api/');
+  RestangularProvider.setDefaultHeaders({ 'code': 'F530190510' });
+}

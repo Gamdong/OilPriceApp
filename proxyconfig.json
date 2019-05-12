@@ -1,0 +1,7 @@
+// {
+//   "http://www.opinet.co.kr/api/": {
+//     "target": "http://www.opinet.co.kr/api/",
+//     "secure": false,
+//     "changeOrigin": true
+//   }
+// }
